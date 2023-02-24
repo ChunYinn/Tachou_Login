@@ -1,0 +1,105 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<link rel="stylesheet" href="{{url_for('static', filename='css/rework.css')}}">
+<title>Rework</title>
+{% endblock %}
+
+{% block body %}
+
+<!-- if update -->
+<form class="form-container">
+
+    <div class="upload-form">
+        <h3>業務填寫</h3>
+        <br>
+
+        <div class="input-group">
+            <label>場內重工/退貨重工</label>
+            <select id="rework-type" name="rework-type">
+                <option value="場內重工">場內重工</option>
+                <option value="退貨重工">退貨重工</option>
+            </select>
+        </div>
+        <div class="input-group">
+            <label>退貨日期</label>
+			<input type="date">
+        </div>
+        <div class="input-group">
+            <label>退貨編號</label>
+			<input type="text" placeholder="編號">
+        </div>
+        <div class="input-group">
+            <label>退貨原因</label>
+			<input type="text" placeholder="原因..">
+        </div>
+        <div class="input-group">
+            <label>排程單號</label>
+			<input type="text" placeholder="單號">
+        </div>
+        <div class="input-group">
+            <label>訂單日期</label>
+			<input type="date">
+        </div>
+        <div class="input-group">
+            <label>預計交貨日</label>
+			<input type="date">
+        </div>
+        <div class="input-group">
+            <label>重工支數</label>
+			<input type="number" value="1" min="0">
+        </div>
+        <div class="input-group">
+            <label>客戶編號</label>
+			<input type="text" placeholder="編號">
+        </div>
+        <!-- if else in djanga -->
+        <div class="input-group">
+            <label>客戶名稱</label>
+			<input type="text" placeholder="名子" value="李峻印">
+        </div>
+        <!-- if else in djanga -->
+        <div class="input-group">
+            <label>產品編號</label>
+			<input type="text" placeholder="編號">
+        </div>
+        <div class="input-group">
+            <label>產品名稱</label>
+			<input type="text" placeholder="產品名">
+        </div>
+        <div class="input-group">
+            <label>產品規格</label>
+			<input type="text" placeholder="規格">
+        </div>
+        <div class="input-group">
+            <label>產品顏色</label>
+			<input type="text" placeholder="顏色">
+        </div>
+        <div class="input-group">
+            <label>鐵輪編號</label>
+			<input type="text" placeholder="編號">
+        </div>
+    </div>
+    <div class="upload-form">
+        <h3>品管填寫</h3>
+        <br>
+
+        <div class="input-group">
+            <label>主因歸類</label>
+			<input type="text" placeholder="歸類">
+        </div>
+        <div class="input-group">
+            <label>完成交貨日</label>
+			<input type="date">
+        </div>
+        <div class="input-group">
+            <label>重工原因描述</label>
+            <textarea id="reason" name="reason" rows="4" cols="50" placeholder="敘述....."></textarea>
+        </div>
+
+    </div>
+    
+
+
+</form>
+{% endblock %}

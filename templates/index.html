@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<title>Home</title>
+<link rel="stylesheet" href="{{url_for('static', filename='css/index.css')}}">
+{% endblock %}
+
+{% block body %}
+<div class="content">
+    <h1>重工總覽</h1>
+
+    {% if rework_list|length < 1 %}
+    <h3>There are no Tasks :(</h3>
+    {% else %}
+    <table class="table1">
+        <tr>
+            <th>退貨日期</th>
+            <th>客戶</th>
+            <th>品名</th>
+            <th>數量</th>
+            <th>規格</th>
+            <th>顏色</th>
+            <th>客戶退貨原因</th>
+            <!-- <th>責任單位</th> -->
+        </tr>
+        {% for rework in rework_list %}
+            <tr>
+                <td> {{ rework[0] }} </td>
+                <td> {{ rework[1] }} </td>
+                <td> {{ rework[2] }} </td>
+                <td> {{ rework[3] }} </td>
+                <td> {{ rework[4] }} </td>
+                <td> {{ rework[5] }} </td>
+                <td> {{ rework[6] }} </td>
+                <!-- <td> {{ rework[7] }} </td> -->
+                <!-- <td>
+                    <a href="#">Delete</a>
+                    <br>
+                    <a href="#">Update</a>
+                </td> -->
+            </tr>
+        {% endfor %}
+    </table>
+    {% endif %}
+
+    <form action="/" method="POST">
+        <input type="text" name="content" id="content">
+        <input type="submit" value="Add Task">
+    </form>
+
+</div>
+
+{% endblock %}
